@@ -73,37 +73,44 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
           </p>
         </div>
 
-        {/* Categories Grid matching modern rounded aesthetic */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Categories Grid matching user's simple layout: Judul di kanan icon, Deskripsi di bawah */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {CATEGORIES.map((cat) => (
             <div
               key={cat.id}
               onClick={() => handleCardClick(cat.name)}
-              className="group p-6 rounded-3xl bg-slate-50/70 hover:bg-white border border-slate-200/80 hover:border-teal-300 shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer flex flex-col justify-between"
+              className="group p-5 rounded-2xl bg-white hover:bg-slate-50/70 border border-slate-200/90 hover:border-teal-500 shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer flex flex-col justify-between"
             >
               <div>
-                <div className="flex items-center justify-between mb-4">
-                  <div
-                    className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${cat.color} text-white flex items-center justify-center shadow-md shadow-slate-200 group-hover:scale-110 transition-transform duration-300`}
-                  >
-                    {getIcon(cat.iconName)}
+                {/* Header: Icon di kiri, Judul di Kanan Icon, Badge Jumlah Dokter */}
+                <div className="flex items-start justify-between gap-2.5 mb-3">
+                  <div className="flex items-center gap-3">
+                    <div
+                      className="w-11 h-11 rounded-xl bg-slate-100 group-hover:bg-teal-50 text-slate-700 group-hover:text-teal-700 flex items-center justify-center shrink-0 border border-slate-200/70 group-hover:border-teal-200 transition-colors"
+                    >
+                      {getIcon(cat.iconName)}
+                    </div>
+                    <div>
+                      <h3 className="text-sm font-bold text-slate-900 group-hover:text-teal-700 transition-colors leading-snug">
+                        {cat.shortName}
+                      </h3>
+                    </div>
                   </div>
-                  <span className="px-2.5 py-1 rounded-full text-xs font-bold bg-white border border-slate-200 text-slate-700 shadow-2xs">
+                  <span className="px-2 py-0.5 rounded-full text-[11px] font-bold bg-slate-100 text-slate-600 border border-slate-200/80 shrink-0">
                     {cat.count} Dokter
                   </span>
                 </div>
 
-                <h3 className="text-base font-bold text-slate-900 group-hover:text-teal-700 transition-colors">
-                  {cat.shortName}
-                </h3>
-                <p className="mt-2 text-xs text-slate-500 leading-relaxed">
+                {/* Deskripsi di Bawah */}
+                <p className="text-xs text-slate-500 leading-relaxed">
                   {cat.description}
                 </p>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-slate-200/60 flex items-center justify-between text-xs font-bold text-teal-700 group-hover:text-teal-800">
+              {/* Simple Bottom Action */}
+              <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-teal-700 group-hover:text-teal-800">
                 <span>Lihat Dokter</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
               </div>
             </div>
           ))}

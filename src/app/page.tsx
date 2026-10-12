@@ -245,6 +245,64 @@ export default function Home() {
         onSelectCategory={(catName) => setSelectedCategory(catName)}
       />
 
+      {/* 3.1. Alur Kemudahan Bagi Pasien & Pengunjung (3 Langkah Mudah Menemukan Dokter) */}
+      <section className="py-16 md:py-20 bg-white relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
+            <span className="px-3.5 py-1 rounded-full text-xs font-semibold bg-purple-50 text-[#5B4FA8] border border-purple-200">
+              Alur Pelayanan Ramah Pasien
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 tracking-tight">
+              3 Langkah Mudah Menemukan Dokter
+            </h2>
+            <p className="mt-2 text-sm text-slate-600">
+              Akses cepat tanpa antre panjang dan tanpa registrasi yang rumit bagi masyarakat Lombok Timur.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+            <div className="p-7 sm:p-8 rounded-3xl bg-[#F4F8FC] border border-slate-200/80 text-center space-y-4 shadow-sm hover:shadow-md transition-shadow">
+              <div className="w-14 h-14 rounded-2xl bg-teal-600 text-white flex items-center justify-center font-bold text-lg mx-auto shadow-md shadow-teal-600/20">
+                1
+              </div>
+              <h3 className="text-lg font-bold text-slate-900">
+                Cari Berdasarkan Kecamatan
+              </h3>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Pilih kecamatan domisili Anda di Lombok Timur dan spesialisasi dokter
+                yang Anda butuhkan.
+              </p>
+            </div>
+
+            <div className="p-7 sm:p-8 rounded-3xl bg-[#F4F8FC] border border-slate-200/80 text-center space-y-4 shadow-sm hover:shadow-md transition-shadow">
+              <div className="w-14 h-14 rounded-2xl bg-sky-600 text-white flex items-center justify-center font-bold text-lg mx-auto shadow-md shadow-sky-600/20">
+                2
+              </div>
+              <h3 className="text-lg font-bold text-slate-900">
+                Periksa Jadwal & Legalitas
+              </h3>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Lihat detail STR, masa berlaku SIP terverifikasi, dan jadwal praktik di RSUD,
+                Puskesmas, maupun klinik pribadi.
+              </p>
+            </div>
+
+            <div className="p-7 sm:p-8 rounded-3xl bg-[#F4F8FC] border border-slate-200/80 text-center space-y-4 shadow-sm hover:shadow-md transition-shadow">
+              <div className="w-14 h-14 rounded-2xl bg-[#5B4FA8] text-white flex items-center justify-center font-bold text-lg mx-auto shadow-md shadow-purple-600/20">
+                3
+              </div>
+              <h3 className="text-lg font-bold text-slate-900">
+                Kirim Pesan / Konsultasi
+              </h3>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Isi form booking singkat atau hubungi langsung via WhatsApp resmi dokter
+                untuk konfirmasi jadwal temu.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 4. Direktori & Pencarian Dokter Terdekat (PRD 5.3) */}
       <DoctorDirectory
         doctors={doctors}
@@ -268,64 +326,6 @@ export default function Home() {
 
       {/* 5. Section Berita & Jurnal Medis (Tumbnail Kiri Besar + List 5 Kanan + Detail Modal) */}
       <NewsSection articles={articles} />
-
-      {/* 6. Alur Kemudahan Bagi Pasien & Pengunjung */}
-      <section className="py-16 md:py-24 bg-white relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
-            <span className="px-3 py-1 rounded-full text-xs font-semibold bg-purple-50 text-[#5B4FA8] border border-purple-200">
-              Alur Pelayanan Ramah Pasien
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 tracking-tight">
-              3 Langkah Mudah Menemukan Dokter
-            </h2>
-            <p className="mt-2 text-sm text-slate-600">
-              Akses cepat tanpa antre panjang dan tanpa registrasi yang rumit bagi masyarakat Lombok Timur.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="p-8 rounded-3xl bg-[#F4F8FC] border border-slate-200/80 text-center space-y-4 shadow-sm hover:shadow-md transition-shadow">
-              <div className="w-14 h-14 rounded-2xl bg-teal-600 text-white flex items-center justify-center font-bold text-lg mx-auto shadow-md shadow-teal-600/20">
-                1
-              </div>
-              <h3 className="text-lg font-bold text-slate-900">
-                Cari Berdasarkan Kecamatan
-              </h3>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Pilih kecamatan domisili Anda di Lombok Timur dan spesialisasi dokter
-                yang Anda butuhkan.
-              </p>
-            </div>
-
-            <div className="p-8 rounded-3xl bg-[#F4F8FC] border border-slate-200/80 text-center space-y-4 shadow-sm hover:shadow-md transition-shadow">
-              <div className="w-14 h-14 rounded-2xl bg-sky-600 text-white flex items-center justify-center font-bold text-lg mx-auto shadow-md shadow-sky-600/20">
-                2
-              </div>
-              <h3 className="text-lg font-bold text-slate-900">
-                Periksa Jadwal & Legalitas
-              </h3>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Lihat detail STR, masa berlaku SIP terverifikasi, dan jadwal praktik di RSUD,
-                Puskesmas, maupun klinik pribadi.
-              </p>
-            </div>
-
-            <div className="p-8 rounded-3xl bg-[#F4F8FC] border border-slate-200/80 text-center space-y-4 shadow-sm hover:shadow-md transition-shadow">
-              <div className="w-14 h-14 rounded-2xl bg-[#5B4FA8] text-white flex items-center justify-center font-bold text-lg mx-auto shadow-md shadow-purple-600/20">
-                3
-              </div>
-              <h3 className="text-lg font-bold text-slate-900">
-                Kirim Pesan / Konsultasi
-              </h3>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Isi form booking singkat atau hubungi langsung via WhatsApp resmi dokter
-                untuk konfirmasi jadwal temu.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* 6. Footer */}
       <Footer
